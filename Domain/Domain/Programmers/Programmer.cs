@@ -4,9 +4,8 @@ using Domain.Languages;
 
 namespace Domain.Programmers
 {
-    public class Programmer
+    public class Programmer : Entity
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Bio { get; set; }
         public string BlogUrl { get; set; }
