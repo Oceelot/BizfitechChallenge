@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using Domain;
@@ -17,6 +18,21 @@ namespace DataAccess
         public IQueryable<T> GetEntities<T>() where T : Entity 
         {
             return Set<T>();
-        } 
+        }
+
+        public T GetEntityById<T>(Guid id) where T : Entity
+        {
+            return Set<T>().SingleOrDefault(entity => entity.Id == id);
+        }
+
+        public void InsertEntity<T>(T entity) where T : Entity
+        {
+            Set<T>().Add(entity);
+        }
+
+        public void RemoveEntity<T>(T entity) where T : Entity
+        {
+            Set<T>().Remove(entity);
+        }
     }
 }
