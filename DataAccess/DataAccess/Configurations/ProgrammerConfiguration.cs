@@ -8,8 +8,9 @@ namespace DataAccess.Configurations
         public ProgrammerConfiguration()
         {
             HasKey(p => p.Id);
+            Property(p => p.Name).IsRequired().HasMaxLength(100);
             Property(p => p.Bio).HasMaxLength(255);
-            Property(p => p.BlogUrl).HasMaxLength(255);
+            Property(p => p.BlogUrl).HasMaxLength(100);
         }
     }
 }
