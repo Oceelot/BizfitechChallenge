@@ -52,6 +52,7 @@
     <Compile Include="Configurations\LanguageConfiguration.cs" />
     <Compile Include="Configurations\ProgrammerConfiguration.cs" />
     <Compile Include="IProfilesContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProfilesContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
