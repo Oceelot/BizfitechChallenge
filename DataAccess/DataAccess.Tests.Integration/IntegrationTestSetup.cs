@@ -2,19 +2,18 @@
 
 namespace DataAccess.Tests.Integration
 {
-    [SetUpFixture]
-    public class IntegrationTestSetUp
+    public class IntegrationTestSetup
     {
         [OneTimeSetUp]
         public void SetUp()
         {
-            
+
         }
 
         [OneTimeTearDown]
         public void Teardown()
         {
-            
+
         }
     }
 }
