@@ -51,5 +51,29 @@ namespace Query.Tests.Unit.Endpoints.Programmers
         {
             _mockGetProgrammerByIdQuery.Verify(query => query.Get(It.IsAny<Guid>()));
         }
+
+        [Test]
+        public void ThenTheCorrectProgrammerIdIsReturned()
+        {
+            Assert.That(_response.Programmer.Id, Is.EqualTo(_expectedProgrammerId));
+        }
+
+        [Test]
+        public void ThenTheCorrectProgrammerNameIsReturned()
+        {
+            Assert.That(_response.Programmer.Name, Is.EqualTo(_expectedName));
+        }
+
+        [Test]
+        public void ThenTheCorrectProgrammerBioIsReturned()
+        {
+            Assert.That(_response.Programmer.Bio, Is.EqualTo(_expectedBio));
+        }
+
+        [Test]
+        public void ThenTheCorrectProgrammerBlogUrlIsReturned()
+        {
+            Assert.That(_response.Programmer.BlogUrl, Is.EqualTo(_expectedBlogUrl));
+        }
     }
 }

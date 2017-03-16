@@ -1,5 +1,4 @@
-﻿using System;
-using ServiceStack;
+﻿using ServiceStack;
 
 namespace Query.Endpoints.Programmer
 {
@@ -12,9 +11,12 @@ namespace Query.Endpoints.Programmer
             _getProgrammerByIdQuery = getProgrammerByIdQuery;
         }
 
-        public ProgrammerResponse Get(ProgrammerRequest programmerRequest)
+        public ProgrammerResponse Get(ProgrammerRequest request)
         {
-            throw new System.NotImplementedException();
+            return new ProgrammerResponse
+            {
+                Programmer = _getProgrammerByIdQuery.Get(request.ProgrammerId)
+            };
         }
     }
 }

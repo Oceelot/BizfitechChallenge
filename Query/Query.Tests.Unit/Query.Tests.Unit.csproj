@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Endpoints\Programmers\GetProgrammerByIdQueryTests.cs" />
     <Compile Include="Endpoints\Programmers\ProgrammerServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -79,6 +80,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\DataAccess\DataAccess\DataAccess.csproj">
+      <Project>{610E3100-FADD-4B57-8607-E5975CAB7056}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Domain\Domain\Domain.csproj">
       <Project>{F06895E1-5B64-4B64-A6B8-72206A2F252B}</Project>
       <Name>Domain</Name>
