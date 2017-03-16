@@ -20,6 +20,7 @@ namespace DataAccess.Migrations
             context.InsertEntity(new Language { Id = Guid.NewGuid(), Description = "SQL"});
             context.InsertEntity(new Language { Id = Guid.NewGuid(), Description = "Python"});
             context.InsertEntity(new Language { Id = Guid.NewGuid(), Description = "PHP"});
+            context.InsertEntity(new Language { Id = Guid.NewGuid(), Description = "Other"});
             context.SaveChanges();
         }
     }
