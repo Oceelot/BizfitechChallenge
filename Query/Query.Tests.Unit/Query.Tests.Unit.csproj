@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{74B2F534-0118-4858-B418-C88691DC3BE2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{33CEE8AB-7DE8-4A2E-9881-BEE5321A0E38}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Query</RootNamespace>
-    <AssemblyName>Query</AssemblyName>
+    <RootNamespace>Query.Tests.Unit</RootNamespace>
+    <AssemblyName>Query.Tests.Unit</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -29,10 +29,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Core.4.0.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Moq, Version=4.7.1.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Moq.4.7.1\lib\net45\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.6.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ServiceStack, Version=4.5.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ServiceStack.4.5.6\lib\net45\ServiceStack.dll</HintPath>
       <Private>True</Private>
@@ -53,10 +62,6 @@
       <HintPath>..\..\packages\ServiceStack.Text.4.5.6\lib\net45\ServiceStack.Text.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="StructureMap, Version=4.4.3.564, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\StructureMap.4.4.3\lib\net45\StructureMap.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -65,25 +70,16 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Topshelf, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Topshelf.4.0.3\lib\net452\Topshelf.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Endpoints\Programmer\GetProgrammerByIdQuery.cs" />
-    <Compile Include="Endpoints\Programmer\ProgrammerRequest.cs" />
-    <Compile Include="Endpoints\Programmer\ProgrammerResponse.cs" />
-    <Compile Include="Endpoints\Programmer\ProgrammerService.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Endpoints\Programmers\GetProgrammerByIdQueryTests.cs" />
+    <Compile Include="Endpoints\Programmers\ProgrammerServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebQueryRegistry.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\Core.Endpoints\Core.Endpoints.csproj">
-      <Project>{05658C6B-B45D-4F93-B1BA-7B7C68F8EE4D}</Project>
-      <Name>Core.Endpoints</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\DataAccess\DataAccess\DataAccess.csproj">
       <Project>{610E3100-FADD-4B57-8607-E5975CAB7056}</Project>
       <Name>DataAccess</Name>
@@ -92,12 +88,11 @@
       <Project>{F06895E1-5B64-4B64-A6B8-72206A2F252B}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Query\Query.csproj">
+      <Project>{74B2F534-0118-4858-B418-C88691DC3BE2}</Project>
+      <Name>Query</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

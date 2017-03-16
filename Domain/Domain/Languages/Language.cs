@@ -2,9 +2,8 @@
 
 namespace Domain.Languages
 {
-    public class Language
+    public class Language : Entity
     {
-        public Guid Id { get; set; }
         public string Description { get; set; }
     }
 }
