@@ -19,7 +19,7 @@ namespace Core.Endpoints.Hosting
         ServiceHost CreateServiceHost();
     }
 
-    class ProfilesAppHostBuilder : IProfilesAppHostBuilder
+    public class ProfilesAppHostBuilder : IProfilesAppHostBuilder
     {
         private string _serviceName;
         private Assembly[] _assemblies;

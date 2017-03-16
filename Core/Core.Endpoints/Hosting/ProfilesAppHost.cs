@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Reflection;
 using ServiceStack;
+using ServiceStack.Text;
 using StructureMap;
 using Container = Funq.Container;
 
@@ -22,7 +23,10 @@ namespace Core.Endpoints.Hosting
 
         public override void Configure(Container container)
         {
-            
+            JsConfig.AlwaysUseUtc = true;
+            JsConfig.EmitCamelCaseNames = true;
+            JsConfig.ExcludeTypeInfo = true;
+            JsConfig.IncludeNullValues = true;
         }
     }
 }
